@@ -1,10 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Revanthroj | Senior Software Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(15,23,42,.85);
+    backdrop-filter:blur(10px);
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    animation:slideUp 1s ease;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    max-width:700px;
+    margin-top:20px;
+    font-size:1.2rem;
+    opacity:.8;
+    animation:fadeIn 2s ease;
+}
+
+.btn{
+    margin-top:30px;
+    padding:14px 28px;
+    background:#38bdf8;
+    border-radius:40px;
+    text-decoration:none;
+    color:#0f172a;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+    color:#38bdf8;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.timeline{
+    border-left:3px solid #38bdf8;
+    padding-left:25px;
+}
+
+.timeline-item{
+    margin-bottom:40px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Hello, I'm Revanth</h1>
-    <p>Welcome to my website.</p>
+
+<nav>
+    <div class="logo">DotNexis</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Hi, I'm <span>Revanthroj</span></h1>
+
+    <p>
+        Senior Software Engineer specializing in Java, Spring Boot,
+        Angular, Microservices, Cloud Architecture and AI-powered solutions.
+    </p>
+
+    <a href="#about" class="btn">Explore My Work</a>
+</section>
+
+<section id="about" class="hidden">
+    <h2 class="section-title">About Me</h2>
+
+    <p style="text-align:center;max-width:900px;margin:auto;">
+        Software Engineer with 4+ years of experience building scalable
+        banking, payment and enterprise systems. Passionate about
+        distributed systems, cloud technologies, AI automation and
+        modern software architecture.
+    </p>
+</section>
+
+<section id="skills" class="hidden">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="cards">
+        <div class="card">Java 17+</div>
+        <div class="card">Spring Boot</div>
+        <div class="card">Angular</div>
+        <div class="card">Microservices</div>
+        <div class="card">AWS</div>
+        <div class="card">Azure</div>
+        <div class="card">GCP</div>
+        <div class="card">Docker</div>
+        <div class="card">Redis</div>
+        <div class="card">Kafka</div>
+    </div>
+</section>
+
+<section id="experience" class="hidden">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>Senior Software Engineer</h3>
+            <p>Ford Motor Company (2025 - Present)</p>
+            <p>Cloud-native solutions, AI automation, Azure and GCP integrations.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Associate Software Engineer</h3>
+            <p>Finzly (2022 - 2025)</p>
+            <p>Banking systems, NACHA payments, Spring Boot microservices, Angular dashboards.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects" class="hidden">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Loan Application</h3>
+            <p>JWT, OAuth2, Spring Boot, Angular.</p>
+        </div>
+
+        <div class="card">
+            <h3>E-Commerce Platform</h3>
+            <p>Payment integration and scalable APIs.</p>
+        </div>
+
+        <div class="card">
+            <h3>Payment Processing System</h3>
+            <p>NACHA compliant ACH payment infrastructure.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact hidden">
+    <h2 class="section-title">Let's Connect</h2>
+
+    <p>Email: revanthrojvenkatachalam@gmail.com</p>
+    <p>
+        LinkedIn:
+        <a href="https://linkedin.com/in/revanthroj">
+            linkedin.com/in/revanthroj
+        </a>
+    </p>
+</section>
+
+<footer>
+    © 2026 Revanthroj Venkatachalam | dotnexis.com
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
+
 </body>
 </html>
