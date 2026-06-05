@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Revanthroj | Senior Software Engineer</title>
+<title>DotNexis | Web Development & AI Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -23,72 +23,77 @@ html{
 
 body{
     background:#0f172a;
-    color:white;
+    color:#fff;
+    line-height:1.6;
 }
 
 nav{
     position:fixed;
-    width:100%;
     top:0;
-    background:rgba(15,23,42,.85);
+    width:100%;
+    background:rgba(15,23,42,.9);
     backdrop-filter:blur(10px);
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     z-index:1000;
 }
 
 .logo{
-    font-size:24px;
+    font-size:28px;
     font-weight:700;
     color:#38bdf8;
 }
 
 nav ul{
     display:flex;
-    gap:30px;
     list-style:none;
+    gap:25px;
 }
 
 nav a{
-    color:white;
     text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
 }
 
 .hero{
     min-height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
+    flex-direction:column;
     text-align:center;
     padding:20px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
 }
 
 .hero h1{
     font-size:4rem;
-    animation:slideUp 1s ease;
-}
-
-.hero h1 span{
     color:#38bdf8;
+    animation:fadeInDown 1s ease;
 }
 
 .hero p{
-    max-width:700px;
+    max-width:800px;
     margin-top:20px;
     font-size:1.2rem;
-    opacity:.8;
-    animation:fadeIn 2s ease;
+    opacity:.9;
 }
 
 .btn{
+    display:inline-block;
     margin-top:30px;
-    padding:14px 28px;
+    padding:14px 30px;
     background:#38bdf8;
-    border-radius:40px;
-    text-decoration:none;
     color:#0f172a;
+    border-radius:30px;
+    text-decoration:none;
     font-weight:600;
     transition:.3s;
 }
@@ -103,14 +108,14 @@ section{
 
 .section-title{
     text-align:center;
-    margin-bottom:50px;
     font-size:2.5rem;
     color:#38bdf8;
+    margin-bottom:50px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
@@ -125,33 +130,45 @@ section{
     transform:translateY(-10px);
 }
 
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.founder{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.founder h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
 .timeline{
     border-left:3px solid #38bdf8;
-    padding-left:25px;
+    padding-left:20px;
 }
 
 .timeline-item{
-    margin-bottom:40px;
+    margin-bottom:30px;
 }
 
 .contact{
     text-align:center;
 }
 
-.contact a{
-    color:#38bdf8;
-    text-decoration:none;
-}
-
 footer{
-    text-align:center;
-    padding:25px;
     background:#020617;
+    padding:20px;
+    text-align:center;
 }
 
 .hidden{
     opacity:0;
-    transform:translateY(40px);
+    transform:translateY(50px);
     transition:all .8s ease;
 }
 
@@ -160,10 +177,10 @@ footer{
     transform:translateY(0);
 }
 
-@keyframes slideUp{
+@keyframes fadeInDown{
     from{
         opacity:0;
-        transform:translateY(50px);
+        transform:translateY(-40px);
     }
     to{
         opacity:1;
@@ -171,15 +188,22 @@ footer{
     }
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
     }
-    to{
-        opacity:1;
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-top:10px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
     }
 }
-
 </style>
 </head>
 
@@ -187,110 +211,188 @@ footer{
 
 <nav>
     <div class="logo">DotNexis</div>
+
     <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<section class="hero">
-    <h1>Hi, I'm <span>Revanthroj</span></h1>
+<section class="hero" id="home">
+    <h1>Transforming Ideas Into Digital Solutions</h1>
 
     <p>
-        Senior Software Engineer specializing in Java, Spring Boot,
-        Angular, Microservices, Cloud Architecture and AI-powered solutions.
+        DotNexis helps startups, businesses, and enterprises build
+        modern web applications, AI-powered solutions, SaaS products,
+        cloud infrastructure, and enterprise software.
     </p>
 
-    <a href="#about" class="btn">Explore My Work</a>
+    <a href="#services" class="btn">Explore Services</a>
 </section>
 
-<section id="about" class="hidden">
-    <h2 class="section-title">About Me</h2>
-
-    <p style="text-align:center;max-width:900px;margin:auto;">
-        Software Engineer with 4+ years of experience building scalable
-        banking, payment and enterprise systems. Passionate about
-        distributed systems, cloud technologies, AI automation and
-        modern software architecture.
-    </p>
-</section>
-
-<section id="skills" class="hidden">
-    <h2 class="section-title">Skills</h2>
+<section id="services" class="hidden">
+    <h2 class="section-title">Our Services</h2>
 
     <div class="cards">
-        <div class="card">Java 17+</div>
-        <div class="card">Spring Boot</div>
-        <div class="card">Angular</div>
-        <div class="card">Microservices</div>
-        <div class="card">AWS</div>
-        <div class="card">Azure</div>
-        <div class="card">GCP</div>
-        <div class="card">Docker</div>
-        <div class="card">Redis</div>
-        <div class="card">Kafka</div>
-    </div>
-</section>
 
-<section id="experience" class="hidden">
-    <h2 class="section-title">Experience</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <h3>Senior Software Engineer</h3>
-            <p>Ford Motor Company (2025 - Present)</p>
-            <p>Cloud-native solutions, AI automation, Azure and GCP integrations.</p>
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Custom websites, business portals, dashboards and enterprise applications.</p>
         </div>
 
-        <div class="timeline-item">
-            <h3>Associate Software Engineer</h3>
-            <p>Finzly (2022 - 2025)</p>
-            <p>Banking systems, NACHA payments, Spring Boot microservices, Angular dashboards.</p>
+        <div class="card">
+            <h3>AI Solutions</h3>
+            <p>AI Chatbots, AI Agents, Workflow Automation and LLM integrations.</p>
+        </div>
+
+        <div class="card">
+            <h3>SaaS Product Development</h3>
+            <p>Build scalable SaaS platforms from idea to production.</p>
+        </div>
+
+        <div class="card">
+            <h3>UI / UX Design</h3>
+            <p>Modern user experiences focused on engagement and conversion.</p>
+        </div>
+
+        <div class="card">
+            <h3>API & Backend</h3>
+            <p>Spring Boot, Node.js, REST APIs, Microservices and Payment Integrations.</p>
+        </div>
+
+        <div class="card">
+            <h3>DevOps & Cloud</h3>
+            <p>AWS, Azure, GCP, Docker, CI/CD and Infrastructure Automation.</p>
         </div>
 
     </div>
 </section>
 
 <section id="projects" class="hidden">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
 
     <div class="cards">
 
         <div class="card">
-            <h3>Loan Application</h3>
-            <p>JWT, OAuth2, Spring Boot, Angular.</p>
+            <h3>Loan Application Platform</h3>
+            <p>Secure banking-grade loan processing platform with JWT and OAuth2.</p>
         </div>
 
         <div class="card">
             <h3>E-Commerce Platform</h3>
-            <p>Payment integration and scalable APIs.</p>
+            <p>Scalable e-commerce solution with payment integrations.</p>
         </div>
 
         <div class="card">
-            <h3>Payment Processing System</h3>
-            <p>NACHA compliant ACH payment infrastructure.</p>
+            <h3>Payment Processing Systems</h3>
+            <p>NACHA and ACH compliant payment infrastructure.</p>
         </div>
 
     </div>
 </section>
 
-<section class="contact hidden">
-    <h2 class="section-title">Let's Connect</h2>
+<section id="about" class="hidden">
+    <h2 class="section-title">About DotNexis</h2>
 
-    <p>Email: revanthrojvenkatachalam@gmail.com</p>
-    <p>
-        LinkedIn:
-        <a href="https://linkedin.com/in/revanthroj">
-            linkedin.com/in/revanthroj
-        </a>
+    <p style="max-width:900px;margin:auto;text-align:center;">
+        DotNexis is a software development company focused on delivering
+        innovative digital solutions for startups, small businesses,
+        and enterprises. We combine software engineering expertise,
+        cloud technologies, and artificial intelligence to create
+        scalable products that drive business growth.
     </p>
 </section>
 
+<section id="founder" class="hidden">
+    <h2 class="section-title">Founder & CEO</h2>
+
+    <div class="founder">
+
+        <h3>Revanthroj Venkatachalam</h3>
+
+        <p style="max-width:900px;">
+            Software Engineer with 4+ years of experience in enterprise
+            software development, banking systems, cloud-native architectures,
+            microservices, and AI-powered solutions.
+            Experienced in Java, Spring Boot, Angular, AWS, Azure, GCP,
+            and modern software architecture.
+        </p>
+
+    </div>
+</section>
+
+<section class="hidden">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>Senior Software Engineer - Ford Motor Company</h3>
+            <p>2025 - Present</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Associate Software Engineer - Finzly</h3>
+            <p>2022 - 2025</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="hidden">
+    <h2 class="section-title">Skills & Technologies</h2>
+
+    <div class="cards">
+        <div class="card">Java</div>
+        <div class="card">Spring Boot</div>
+        <div class="card">Angular</div>
+        <div class="card">AWS</div>
+        <div class="card">Azure</div>
+        <div class="card">GCP</div>
+        <div class="card">Docker</div>
+        <div class="card">Kafka</div>
+        <div class="card">Redis</div>
+        <div class="card">PostgreSQL</div>
+    </div>
+</section>
+
+<section class="hidden">
+    <h2 class="section-title">Certifications</h2>
+
+    <div class="cards">
+        <div class="card">AWS Cloud Practitioner Essentials</div>
+        <div class="card">Google Data Analytics</div>
+        <div class="card">Java Programming Master Class</div>
+        <div class="card">Full Stack Developer Certification</div>
+        <div class="card">AI Hackathon Shield</div>
+    </div>
+</section>
+
+<section class="hidden">
+    <h2 class="section-title">Blog</h2>
+
+    <p style="text-align:center;">
+        Coming Soon - Articles on AI, Cloud, Microservices,
+        Software Development and SaaS Engineering.
+    </p>
+</section>
+
+<section id="contact" class="contact hidden">
+    <h2 class="section-title">Contact Us</h2>
+
+    <p>Email: revanthrojvenkatachalam@gmail.com</p>
+
+    <p>LinkedIn: linkedin.com/in/revanthroj</p>
+
+    <p>Website: dotnexis.com</p>
+</section>
+
 <footer>
-    © 2026 Revanthroj Venkatachalam | dotnexis.com
+    © 2026 DotNexis. All Rights Reserved.
 </footer>
 
 <script>
@@ -298,16 +400,16 @@ footer{
 const observer = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){
-            entry.target.classList.add("show");
+            entry.target.classList.add('show');
         }
     });
 });
 
-document.querySelectorAll(".hidden").forEach(el=>{
+document.querySelectorAll('.hidden').forEach(el=>{
     observer.observe(el);
 });
 
-</script>
+</script>    
 
 </body>
 </html>
